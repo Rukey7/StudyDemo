@@ -1,16 +1,16 @@
 package com.dl7.studydemo.activity;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.widget.TextView;
 
+import com.dl7.androidlib.activity.BaseActivity;
 import com.dl7.studydemo.R;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
-public class ReflectionActivity extends AppCompatActivity {
+public class ReflectionActivity extends BaseActivity {
 
     @Bind(R.id.toolbar)
     Toolbar mToolbar;
