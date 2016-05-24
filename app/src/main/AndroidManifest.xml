@@ -17,6 +17,8 @@
         </activity>
         <activity android:name=".activity.ReflectionActivity">
         </activity>
+        <activity android:name=".activity.AnnotationActivity">
+        </activity>
     </application>
 
 </manifest>

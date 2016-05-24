@@ -10,13 +10,14 @@ import android.view.Window;
 import android.view.WindowManager;
 
 import com.dl7.androidlib.R;
-import com.readystatesoftware.systembartint.SystemBarTintManager;
+import com.dl7.androidlib.utils.SystemBar.SystemBarTintManager;
 
 public abstract class BaseActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         initSystemBarTint();
     }
 
@@ -24,11 +25,14 @@ public abstract class BaseActivity extends AppCompatActivity {
      * 设置状态栏颜色
      */
     public void initSystemBarTint() {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT
+                && Build.VERSION.SDK_INT < Build.VERSION_CODES.LOLLIPOP) {
             setTranslucentStatus();
             SystemBarTintManager tintManager = new SystemBarTintManager(this);
             tintManager.setStatusBarTintEnabled(true);
+            tintManager.setNavigationBarTintEnabled(true);
             tintManager.setStatusBarTintColor(getDarkColorPrimary());
+//            tintManager.setTintDrawable(new ColorDrawable(getDarkColorPrimary()));
         }
     }
 
